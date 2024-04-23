@@ -44,6 +44,7 @@ class JsonParser {
 		}
 	}
 
+//	TC 2-1
 	@Keyword
 	static void validateSubscriberStatusAndPricePlan(String jsonData, String subscriberStatus, String pricePlan) {
 		def jsonSlurper = new JsonSlurper()
@@ -79,4 +80,25 @@ class JsonParser {
 			KeywordUtil.markFailed("Subscriber status result: "+subscriber.value+" or Price plan result: "+plan.value+" didn't match the expected value.")
 		}
 	}
+	
+//	TC 2-2
+	@Keyword
+	static void validateForCheckSubcription(String jsonData) {
+		def jsonSlurper = new JsonSlurper()
+		def jsonObject = jsonSlurper.parseText(jsonData)
+		
+		def data = jsonObject.data
+		
+		if (data.size() >= 1) {
+			KeywordUtil.markPassed("Offer after downsell event intact and listed ")
+		} else {
+			println("Offer after downsell event didn't intact or listed ")
+		}
+	}
+//	TC 2-3
+//	TC 2-4
+//	TC 2-5
+//	TC 2-6
+//	TC 2-7
+//	TC 2-2
 }

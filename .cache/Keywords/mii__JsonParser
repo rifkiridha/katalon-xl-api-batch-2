@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "08B4C026BFEF1BF635372B384C9CFF6A",
+  "keywordFileContentHash": "5A6BC8A703AA877DBA7A22018B8B44F0",
   "keywordClasses": [
     {
       "name": "mii.JsonParser",
@@ -35,6 +35,25 @@
             },
             {
               "name": "pricePlan",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": ""
+        },
+        {
+          "name": "validateForCheckSubcription",
+          "parameters": [
+            {
+              "name": "jsonData",
               "initialExpression": "",
               "type": {
                 "fullClassName": "java.lang.String",
