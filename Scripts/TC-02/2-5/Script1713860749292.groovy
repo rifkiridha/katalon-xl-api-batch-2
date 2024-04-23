@@ -28,6 +28,16 @@ def response = WS.sendRequest(request);
 
 def bodyResponse = response.getResponseBodyContent();
 
-def jsonData = JsonParser.parseJson(bodyResponse);
-
 WS.comment(bodyResponse);
+
+def xmlString = '''
+<ns2:umb xmlns:ns2="http://schemas.xl.co.id/UMBResponse/V1.0">
+  <ns2:result>
+    <ns2:resultdata>Permintaan anda sedang diproses. Terima kasih.</ns2:resultdata>
+  </ns2:result>
+</ns2:umb>
+''';
+
+println(xmlString);
+
+JsonParser.validateForHitAPIUnsubscribe(bodyResponse, xmlString);

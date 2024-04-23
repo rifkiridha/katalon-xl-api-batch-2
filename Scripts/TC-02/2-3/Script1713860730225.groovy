@@ -28,6 +28,6 @@ def response = WS.sendRequest(request);
 
 def bodyResponse = response.getResponseBodyContent();
 
-def jsonData = JsonParser.parseJson(bodyResponse);
-
 WS.comment(bodyResponse);
+
+JsonParser.validateForCheckUPCCBefore(bodyResponse);

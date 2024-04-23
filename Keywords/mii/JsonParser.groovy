@@ -44,7 +44,7 @@ class JsonParser {
 		}
 	}
 
-//	TC 2-1
+	//	TC 2-1
 	@Keyword
 	static void validateSubscriberStatusAndPricePlan(String jsonData, String subscriberStatus, String pricePlan) {
 		def jsonSlurper = new JsonSlurper()
@@ -80,25 +80,102 @@ class JsonParser {
 			KeywordUtil.markFailed("Subscriber status result: "+subscriber.value+" or Price plan result: "+plan.value+" didn't match the expected value.")
 		}
 	}
-	
-//	TC 2-2
+
+	//	TC 2-2
 	@Keyword
 	static void validateForCheckSubcription(String jsonData) {
 		def jsonSlurper = new JsonSlurper()
 		def jsonObject = jsonSlurper.parseText(jsonData)
-		
+
+		def status = jsonObject.status
 		def data = jsonObject.data
-		
-		if (data.size() >= 1) {
+
+		if (status == "ok" && data.size() >= 1) {
 			KeywordUtil.markPassed("Offer after downsell event intact and listed ")
 		} else {
-			println("Offer after downsell event didn't intact or listed ")
+			println("Offer after downsell event not intact or listed ")
 		}
 	}
-//	TC 2-3
-//	TC 2-4
-//	TC 2-5
-//	TC 2-6
-//	TC 2-7
-//	TC 2-2
+
+	//	TC 2-3
+	@Keyword
+	static void validateForCheckUPCCBefore(String jsonData) {
+		def jsonSlurper = new JsonSlurper()
+		def jsonObject = jsonSlurper.parseText(jsonData)
+
+		def status = jsonObject.status
+		def subscriber = jsonObject.data.subscriber
+
+		if (status == "ok" && subscriber.size() >= 1) {
+			KeywordUtil.markPassed("Quota after downsell listed")
+		} else {
+			println("Quota after downsell  notlisted")
+		}
+	}
+	//	TC 2-4
+	static void validateForCheckAllowance(String jsonData) {
+		def jsonSlurper = new JsonSlurper()
+		def jsonObject = jsonSlurper.parseText(jsonData)
+
+		def status = jsonObject.status
+
+		if (status == "ok") {
+			KeywordUtil.markPassed("Quota After downsell listed with correct amount of quota")
+		} else {
+			println("Quota After downsell not listed with correct amount of quota")
+		}
+	}
+
+	//	TC 2-5
+	static void validateForHitAPIUnsubscribe(String jsonData, String xmlData) {
+		if (jsonData == xmlData) {
+			KeywordUtil.markPassed("Success execution")
+		} else {
+			println("Failed Execution")
+		}
+	}
+
+	//	TC 2-6
+	static void validateForCheckSubscriptionAfter(String jsonData) {
+		def jsonSlurper = new JsonSlurper()
+		def jsonObject = jsonSlurper.parseText(jsonData)
+
+		def status = jsonObject.status
+
+		if (status == "ok") {
+			KeywordUtil.markPassed("Offer after downsell are taken out")
+		} else {
+			println("Offer after downsell are not taken out")
+		}
+	}
+	//	TC 2-7
+	@Keyword
+	static void validateForCheckUPCCAfter(String jsonData) {
+		def jsonSlurper = new JsonSlurper()
+		def jsonObject = jsonSlurper.parseText(jsonData)
+
+		def status = jsonObject.status
+		def subscriber = jsonObject.data.subscriber
+
+		if (status == "ok" && subscriber.size() >= 1) {
+			KeywordUtil.markPassed("Quota After downsell are taken out")
+		} else {
+			println("Quota After downsell are not taken out")
+		}
+	}
+	//	TC 2-8
+	//	TC 2-7
+	@Keyword
+	static void validateForCheckAllowanceAfter(String jsonData) {
+		def jsonSlurper = new JsonSlurper()
+		def jsonObject = jsonSlurper.parseText(jsonData)
+
+		def status = jsonObject.status
+
+		if (status == "ok") {
+			KeywordUtil.markPassed("Quota After downsell are taken out")
+		} else {
+			println("Quota After downsell are not taken out")
+		}
+	}
 }

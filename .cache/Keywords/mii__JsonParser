@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "5A6BC8A703AA877DBA7A22018B8B44F0",
+  "keywordFileContentHash": "068521AB8738FBE2513B0085050FC08C",
   "keywordClasses": [
     {
       "name": "mii.JsonParser",
@@ -46,8 +46,7 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": ""
+          ]
         },
         {
           "name": "validateForCheckSubcription",
@@ -65,11 +64,64 @@
                 "errorOnParsing": false
               }
             }
-          ],
-          "javadoc": ""
+          ]
+        },
+        {
+          "name": "validateForCheckUPCCBefore",
+          "parameters": [
+            {
+              "name": "jsonData",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "validateForCheckUPCCAfter",
+          "parameters": [
+            {
+              "name": "jsonData",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "validateForCheckAllowanceAfter",
+          "parameters": [
+            {
+              "name": "jsonData",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ]
         }
       ]
     }
   ],
-  "javadocParsed": true
+  "javadocParsed": false
 }
