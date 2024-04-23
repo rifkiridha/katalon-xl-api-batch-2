@@ -16,30 +16,4 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
-import com.kms.katalon.core.testobject.RequestObject as RequestObject
-import mii.JsonParser
-import mii.VariableCollections
 
-def variable = [:];
-
-RequestObject request = findTestObject('Postman/TC-02/2-1-checkSubscriberStatus',variable);
-
-def response = WS.sendRequest(request);
-
-def bodyResponse = response.getResponseBodyContent();
-
-def jsonData = JsonParser.parseJson(bodyResponse);
-
-WS.comment(bodyResponse);
-
-//VariableCollections.map.put("subscriberStatus", "A");
-//VariableCollections.map.put("pricePlan", "active prepaid priceplan");
-
-VariableCollections.subscriberStatus = "A";
-VariableCollections.pricePlan = "active prepaid priceplan";
-
-String subscriberStatus = VariableCollections.map.get("subscriberStatus");
-String pricePlan = VariableCollections.map.get("pricePlan");
-
-println(VariableCollections.subscriberStatus);
-//JsonParser.validateSubscriberStatusAndPricePlan(bodyResponse, subscriberStatus, pricePlan);
