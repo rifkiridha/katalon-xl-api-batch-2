@@ -22,7 +22,7 @@ import mii.VariableCollections
 
 def variable = [:];
 
-RequestObject request = findTestObject('Postman/TC-02/2-2',variable);
+RequestObject request = findTestObject('Postman/TC-02/2-4',variable);
 
 def response = WS.sendRequest(request);
 

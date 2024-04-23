@@ -32,14 +32,8 @@ def jsonData = JsonParser.parseJson(bodyResponse);
 
 WS.comment(bodyResponse);
 
-//VariableCollections.map.put("subscriberStatus", "A");
-//VariableCollections.map.put("pricePlan", "active prepaid priceplan");
-
 VariableCollections.subscriberStatus = "A";
-VariableCollections.pricePlan = "active prepaid priceplan";
-
-String subscriberStatus = VariableCollections.map.get("subscriberStatus");
-String pricePlan = VariableCollections.map.get("pricePlan");
+VariableCollections.pricePlan = "513268";
 
 println(VariableCollections.subscriberStatus);
-JsonParser.validateSubscriberStatusAndPricePlan(bodyResponse, subscriberStatus, pricePlan);
+JsonParser.validateSubscriberStatusAndPricePlan(bodyResponse, VariableCollections.subscriberStatus, VariableCollections.pricePlan);
