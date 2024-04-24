@@ -18,27 +18,8 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-
-// Define classes to represent the JSON structure
-class Address {
-    String street
-    String city
-    String state
-    String postalCode
-}
-
-class PhoneNumber {
-    String home
-    String work
-}
-
-class Person {
-    String name
-    int age
-    Address address
-    List<String> emails
-    PhoneNumber phoneNumbers
-}
+import com.google.gson.JsonParser
+import com.google.gson.JsonElement
 
 // JSON string representing the data
 def jsonString = '''
@@ -48,14 +29,12 @@ def jsonString = '''
 }
 '''
 
-// Create Gson object with pretty printing enabled
-def gson = new GsonBuilder().setPrettyPrinting().create()
+Gson gson = new GsonBuilder().setPrettyPrinting().create();
+//JsonParser jp = new JsonParser();
+//JsonElement je = jp.parse(jsonString);
+//String prettyJsonString = gson.toJson(je);
 
-// Deserialize JSON string into a Person object
-def person = gson.fromJson(jsonString, Person.class)
+String prettyJsonString = gson.toJson(new JsonParser().parse(jsonString));
 
-// Convert Person object back to pretty-printed JSON string
-def prettyJsonString = gson.toJson(person)
 
-// Print the pretty-printed JSON string
-println(prettyJsonString)
+println(prettyJsonString);

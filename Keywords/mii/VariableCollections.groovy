@@ -37,6 +37,9 @@ public class VariableCollections {
 	public static List<Object> newList = new ArrayList<>();
 	public static Set<Object> newSet = new HashSet<>();
 
+	//	TC 02
+	public static msisdn="6287766961235";
+
 	//	TC 2-1
 	public static String subscriberStatus;
 	public static String pricePlan;

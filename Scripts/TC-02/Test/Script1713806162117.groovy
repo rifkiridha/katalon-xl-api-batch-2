@@ -17,6 +17,26 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-String usertoken = "asasasa"
-Gson gson = new Gson();
-String json = gson.toJson(usertoken);
+//String usertoken = "asasasa"
+//Gson gson = new Gson();
+//String json = gson.toJson(usertoken);
+
+def xml = '''
+<get_next_best_offer_response>
+    <offers>
+        <offer>
+            <channel_attributes>
+                <channel_attribute>
+                    <value>Example Value</value>
+                </channel_attribute>
+            </channel_attributes>
+        </offer>
+    </offers>
+</get_next_best_offer_response>
+'''
+
+def root = new XmlSlurper().parseText(xml)
+
+def value = root.offers.offer.channel_attributes.channel_attribute.value.text()
+
+println "Value: $value"
