@@ -16,27 +16,43 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
+import com.kms.katalon.core.testobject.RequestObject as RequestObject
 
-//String usertoken = "asasasa"
-//Gson gson = new Gson();
-//String json = gson.toJson(usertoken);
+def variable = [:];
 
-def xml = '''
-<get_next_best_offer_response>
-    <offers>
-        <offer>
-            <channel_attributes>
-                <channel_attribute>
-                    <value>Example Value</value>
-                </channel_attribute>
-            </channel_attributes>
-        </offer>
-    </offers>
-</get_next_best_offer_response>
-'''
+RequestObject request = findTestObject('Postman/HitXML',variable);
+def response = WS.sendRequest(request);
 
-def root = new XmlSlurper().parseText(xml)
+def bodyResponse = response.getResponseBodyContent();
 
-def value = root.offers.offer.channel_attributes.channel_attribute.value.text()
+WS.comment(bodyResponse);
 
+print(bodyResponse);
+
+def root = new XmlSlurper().parseText(bodyResponse)
+
+def value = root.offers.offer[0].channel_attributes.channel_attribute[6].value.text()
+//
 println "Value: $value"
+
+String[] pairs = value.split(";");
+
+String quotaValue = null;
+for (String pair : pairs) {
+	if (pair.startsWith("QUOTA")) {
+		quotaValue = pair.split("\\|")[1];
+		break;
+	}
+}
+
+if (quotaValue != null) {
+	if (quotaValue.endsWith("-MB")) {
+                double mbValue = Double.parseDouble(quotaValue.replaceAll("[^\\d.]", ""));
+                double gbValue = mbValue / 1024.0; // Convert MB to GB
+                System.out.println("Quota Value: " + gbValue + "-GB");
+            } else {
+                System.out.println("Quota Value: " + quotaValue);
+            }
+} else {
+	System.out.println("Quota information not found in the input string.");
+}

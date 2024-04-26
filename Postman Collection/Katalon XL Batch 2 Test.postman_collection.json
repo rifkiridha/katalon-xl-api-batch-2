@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "4d0858a9-34f9-472c-8605-a2218d5f9a1f",
+		"name": "Katalon XL Batch 2 Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27565426"
+	},
+	"item": [
+		{
+			"name": "Hit XML",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessTokenUrl",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "authorization_code",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "CCOcLt5kXKGt1mehpMTjdNtMrZsa",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "2ifqtA3nNiGOV006YDfXOc44kYIa",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "headerPrefix",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "KATALONTEST-APP",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 35c108ec-3cd7-3ae5-8e42-a2647f778e65"
+					},
+					{
+						"key": "Cookie",
+						"value": "route=1714028176.357.201.380128|81ae3a9a04c06b83bdb4bb4311fcd72d"
+					}
+				],
+				"url": {
+					"raw": "https://gateway.igw.gcp.excelcom.co.id/mccm-9953/v1/o/get-best-offer?CHANNEL_NAME=MYXLULTIMATE_V2_XLPRE&SUBSCRIBER_ID=680273720&CURRENT_BALANCE=6330&LOCATION=Banner*Section_1&CGI_NAME=510.11.710310.13&KABUPATEN_ID=1106&REQUEST_ID=sanity-test-miranti-240424",
+					"protocol": "https",
+					"host": [
+						"gateway",
+						"igw",
+						"gcp",
+						"excelcom",
+						"co",
+						"id"
+					],
+					"path": [
+						"mccm-9953",
+						"v1",
+						"o",
+						"get-best-offer"
+					],
+					"query": [
+						{
+							"key": "CHANNEL_NAME",
+							"value": "MYXLULTIMATE_V2_XLPRE"
+						},
+						{
+							"key": "SUBSCRIBER_ID",
+							"value": "680273720"
+						},
+						{
+							"key": "CURRENT_BALANCE",
+							"value": "6330"
+						},
+						{
+							"key": "LOCATION",
+							"value": "Banner*Section_1"
+						},
+						{
+							"key": "CGI_NAME",
+							"value": "510.11.710310.13"
+						},
+						{
+							"key": "KABUPATEN_ID",
+							"value": "1106"
+						},
+						{
+							"key": "REQUEST_ID",
+							"value": "sanity-test-miranti-240424"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Hit Token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Cookie",
+						"value": "route=1714028176.357.201.380128|81ae3a9a04c06b83bdb4bb4311fcd72d"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "2ifqtA3nNiGOV006YDfXOc44kYIa",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "CCOcLt5kXKGt1mehpMTjdNtMrZsa",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://gateway.igw.gcp.excelcom.co.id/oauth",
+					"protocol": "https",
+					"host": [
+						"gateway",
+						"igw",
+						"gcp",
+						"excelcom",
+						"co",
+						"id"
+					],
+					"path": [
+						"oauth"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
