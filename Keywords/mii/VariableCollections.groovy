@@ -36,7 +36,7 @@ public class VariableCollections {
 	public static Map<String, Object> newMap = new HashMap<>();
 	public static List<Object> newList = new ArrayList<>();
 	public static Set<Object> newSet = new HashSet<>();
-	
+
 	//	for checking API
 	public static status;
 	public static code;

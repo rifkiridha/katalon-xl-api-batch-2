@@ -18,7 +18,7 @@
       <matchCondition>equals</matchCondition>
       <name>Authorization</name>
       <type>Main</type>
-      <value>Bearer f51cb724-172d-3564-883d-bf9afa3d6721</value>
+      <value>Bearer f7818a73-9dce-324e-970f-bed4a1fa7c34</value>
       <webElementGuid>fcd8bf88-60b2-488d-a1c5-b0dac24f12e2</webElementGuid>
    </httpHeaderProperties>
    <httpHeaderProperties>
@@ -33,7 +33,8 @@
    <maxResponseSize>0</maxResponseSize>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>GET</restRequestMethod>
-   <restUrl>https://gateway.igw.gcp.excelcom.co.id/mccm-9953/v1/o/get-best-offer?CHANNEL_NAME=MYXLULTIMATE_V2_XLPRE&amp;SUBSCRIBER_ID=680273720&amp;CURRENT_BALANCE=6330&amp;LOCATION=Banner*Section_1&amp;CGI_NAME=510.11.710310.13&amp;KABUPATEN_ID=1106&amp;REQUEST_ID=sanity-test-miranti-240424</restUrl>
+   <restUrl>https://gateway.igw.gcp.excelcom.co.id/mccm-9953/v1/o/get-best-offer?CHANNEL_NAME=MYXLULTIMATE_V2_XLPRE&amp;SUBSCRIBER_ID=1384471842&#xd;
+&amp;CURRENT_BALANCE=6330&amp;LOCATION=Banner*Section_1&amp;CGI_NAME=510.11.710310.13&amp;KABUPATEN_ID=1106&amp;REQUEST_ID=sanity-test-miranti-240424</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
