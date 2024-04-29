@@ -8,7 +8,7 @@
    <smartLocatorEnabled>false</smartLocatorEnabled>
    <useRalativeImagePath>false</useRalativeImagePath>
    <autoUpdateContent>true</autoUpdateContent>
-   <connectionTimeout>-1</connectionTimeout>
+   <connectionTimeout>0</connectionTimeout>
    <followRedirects>false</followRedirects>
    <httpBody></httpBody>
    <httpBodyContent></httpBodyContent>
@@ -30,18 +30,25 @@
       <webElementGuid>97458c71-3a38-41f1-99d8-547773993ce1</webElementGuid>
    </httpHeaderProperties>
    <katalonVersion>9.3.2</katalonVersion>
-   <maxResponseSize>-1</maxResponseSize>
+   <maxResponseSize>0</maxResponseSize>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>GET</restRequestMethod>
-   <restUrl>https://ipaas-mediation-sit.api.devgcp.excelcom.co.id/api/subscriber/v1/6287766961235/subscription</restUrl>
+   <restUrl>https://ipaas-mediation-sit.api.devgcp.excelcom.co.id/api/subscriber/v1/${msisdn}/subscription</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
    <soapRequestMethod></soapRequestMethod>
    <soapServiceEndpoint></soapServiceEndpoint>
    <soapServiceFunction></soapServiceFunction>
-   <socketTimeout>-1</socketTimeout>
+   <socketTimeout>0</socketTimeout>
    <useServiceInfoFromWsdl>true</useServiceInfoFromWsdl>
+   <variables>
+      <defaultValue>findTestData('TC-02/2-2').getValue(1, 1)</defaultValue>
+      <description></description>
+      <id>5754fd08-4b08-4b73-836e-90164c1471f1</id>
+      <masked>false</masked>
+      <name>msisdn</name>
+   </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 
 import com.kms.katalon.core.testobject.RequestObject

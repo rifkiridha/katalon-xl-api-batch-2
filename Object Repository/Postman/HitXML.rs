@@ -18,7 +18,7 @@
       <matchCondition>equals</matchCondition>
       <name>Authorization</name>
       <type>Main</type>
-      <value>Bearer 72d41949-281e-3879-814c-eef2dcd187db</value>
+      <value>Bearer f51cb724-172d-3564-883d-bf9afa3d6721</value>
       <webElementGuid>fcd8bf88-60b2-488d-a1c5-b0dac24f12e2</webElementGuid>
    </httpHeaderProperties>
    <httpHeaderProperties>

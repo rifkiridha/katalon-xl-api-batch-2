@@ -5,4 +5,17 @@
    <tag></tag>
    <comment></comment>
    <testCaseGuid>75a3df45-7764-4b39-9fee-0299612c153d</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>f04e8f58-e3fc-4585-bbbf-344419fe6807</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>findTestData('TC-02/2-2').getValue(2, 1)</defaultValue>
+      <description></description>
+      <id>f04e8f58-e3fc-4585-bbbf-344419fe6807</id>
+      <masked>false</masked>
+      <name>status</name>
+   </variable>
 </TestCaseEntity>

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DataFileEntity>
    <description></description>
-   <name>2-2 (1)</name>
+   <name>2-2</name>
    <tag></tag>
    <connectionProperties/>
    <containsHeaders>true</containsHeaders>
    <csvSeperator></csvSeperator>
-   <dataFileGUID>fc84094f-6c73-485a-b0c2-09739463a2ee</dataFileGUID>
-   <dataSourceUrl></dataSourceUrl>
+   <dataFileGUID>018217c7-d58c-48fa-8b89-c6fb1160404d</dataFileGUID>
+   <dataSourceUrl>D:\Aigen Global\Project XL\Katalon\katalon-xl-api-batch-2\katalon-xl-api-batch-2\Data Files\TC-02\2-2.xlsx</dataSourceUrl>
    <driver>ExcelFile</driver>
    <isInternalPath>false</isInternalPath>
    <query></query>
    <secureUserAccount>false</secureUserAccount>
-   <sheetName></sheetName>
+   <sheetName>Sheet1</sheetName>
    <usingGlobalDBSetting>false</usingGlobalDBSetting>
 </DataFileEntity>
