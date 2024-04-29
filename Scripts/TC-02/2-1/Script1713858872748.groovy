@@ -20,7 +20,17 @@ import com.kms.katalon.core.testobject.RequestObject as RequestObject
 import mii.JsonParser
 import mii.VariableCollections
 
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
+import com.google.gson.JsonParser as JParser
+import com.google.gson.JsonElement
+
 def variable = [:];
+
+VariableCollections.status = status;
+VariableCollections.code = code;
+VariableCollections.message = message;
+
 
 RequestObject request = findTestObject('Postman/TC-02/2-1',variable);
 
@@ -28,10 +38,17 @@ def response = WS.sendRequest(request);
 
 def bodyResponse = response.getResponseBodyContent();
 
-WS.comment(bodyResponse);
+Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+String prettyJsonString = gson.toJson(new JParser().parse(bodyResponse));
+
+println(prettyJsonString);
+
+WS.comment(prettyJsonString);
 
 VariableCollections.subscriberStatus = "A";
 VariableCollections.pricePlan = "513268";
 
+
 println(VariableCollections.subscriberStatus);
-JsonParser.validateSubscriberStatusAndPricePlan(bodyResponse, VariableCollections.subscriberStatus, VariableCollections.pricePlan);
+JsonParser.validateSubscriberStatusAndPricePlan(bodyResponse, VariableCollections.status, VariableCollections.code, VariableCollections.message, VariableCollections.subscriberStatus, VariableCollections.pricePlan);

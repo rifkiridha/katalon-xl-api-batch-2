@@ -36,6 +36,11 @@ public class VariableCollections {
 	public static Map<String, Object> newMap = new HashMap<>();
 	public static List<Object> newList = new ArrayList<>();
 	public static Set<Object> newSet = new HashSet<>();
+	
+	//	for checking API
+	public static status;
+	public static code;
+	public static message;
 
 	//	TC 02
 	public static msisdn="6287766961235";

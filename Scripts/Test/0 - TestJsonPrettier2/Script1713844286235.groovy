@@ -28,13 +28,12 @@ def jsonString = '''
   }
 }
 '''
-
-Gson gson = new GsonBuilder().setPrettyPrinting().create();
 //JsonParser jp = new JsonParser();
 //JsonElement je = jp.parse(jsonString);
 //String prettyJsonString = gson.toJson(je);
 
-String prettyJsonString = gson.toJson(new JsonParser().parse(jsonString));
+Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
+String prettyJsonString = gson.toJson(new JsonParser().parse(jsonString));
 
 println(prettyJsonString);

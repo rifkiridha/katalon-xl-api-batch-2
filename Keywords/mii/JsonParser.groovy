@@ -46,9 +46,22 @@ class JsonParser {
 
 	//	TC 2-1
 	@Keyword
-	static void validateSubscriberStatusAndPricePlan(String jsonData, String subscriberStatus, String pricePlan) {
-		def jsonSlurper = new JsonSlurper()
-		def json = jsonSlurper.parseText(jsonData)
+	static void validateSubscriberStatusAndPricePlan(String jsonData, String status, String code, String message, String subscriberStatus, String pricePlan) {
+		println("expected status : "+status);
+		println("expected code : "+code);
+		println("expected message : "+message);
+		
+		def jsonSlurper = new JsonSlurper();
+		def json = jsonSlurper.parseText(jsonData);
+		
+		def statusResponse = json.status;
+		def codeResponse = json.code;
+		def messageResponse = json.message;
+		
+		println("statusResponse : "+statusResponse);
+		println("codeResponse : "+codeResponse);
+		println("messageResponse : "+messageResponse);
+		
 
 		def subscriber = json.data.find { it.name == "SUBSCRIBER_STATUS" }
 		def plan = json.data.find { it.name == "PRICEPLAN" }
@@ -56,6 +69,12 @@ class JsonParser {
 		println("SUBSCRIBER STATUS data :"+subscriber)
 		println("SUBSCRIBER STATUS value result :"+subscriber.value)
 		println("SUBSCRIBER STATUS value expected :"+subscriberStatus)
+		
+		if(status == statusResponse && code == codeResponse && message == messageResponse) {
+			KeywordUtil.markPassed("Status, code, and message matches the expected value.")
+		}else {
+			KeywordUtil.markFailed("Status, code, and message didn't match the expected value.")
+		}
 
 		if(subscriber.value == subscriberStatus) {
 			KeywordUtil.markPassed("Subscriber status result: "+subscriber.value+" match the expected value.")
