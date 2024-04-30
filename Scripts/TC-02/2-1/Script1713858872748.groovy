@@ -49,6 +49,9 @@ def bodyResponse = response.getResponseBodyContent();
 JsonParser.prettier(bodyResponse);
 
 VariableCollections.subscriberStatus = "A";
+
+
+
 VariableCollections.pricePlan = "513268";
 
 

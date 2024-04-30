@@ -38,11 +38,11 @@ class JsonParser {
 
 	static prettier(String jsonString) {
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
-		
+
 		String prettyJsonString = gson.toJson(new JParser().parse(jsonString));
-		
+
 		println(prettyJsonString);
-		
+
 		WS.comment(prettyJsonString);
 	}
 

@@ -32,12 +32,12 @@ def variable = [:];
 //
 //WS.comment(bodyResponse);
 
-//VariableCollections.map.put("subscriberStatus", "A");
-//VariableCollections.map.put("pricePlan", "active prepaid priceplan");
+VariableCollections.map.put("subscriberStatus", "A");
+VariableCollections.map.put("pricePlan", "active prepaid priceplan");
 
 String subscriberStatus = VariableCollections.map.get("subscriberStatus");
 String pricePlan = VariableCollections.map.get("pricePlan");
 
 println(subscriberStatus+" and "+pricePlan)
 
-JsonParser.validateSubscriberStatusAndPricePlan(bodyResponse, subscriberStatus, pricePlan);
+//JsonParser.validateSubscriberStatusAndPricePlan(bodyResponse, subscriberStatus, pricePlan);

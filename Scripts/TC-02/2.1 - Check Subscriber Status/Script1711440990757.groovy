@@ -38,6 +38,8 @@ WS.comment(bodyResponse);
 VariableCollections.subscriberStatus = "A";
 VariableCollections.pricePlan = "active prepaid priceplan";
 
+VariableCollections.map.put("subscriberStatus","AAAA");
+
 String subscriberStatus = VariableCollections.map.get("subscriberStatus");
 String pricePlan = VariableCollections.map.get("pricePlan");
 
