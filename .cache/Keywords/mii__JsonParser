@@ -1,5 +1,5 @@
 {
-  "keywordFileContentHash": "75B4D40734604CD61A6DDF97948386F6",
+  "keywordFileContentHash": "D2B8D0AC2E9F9FDCEC7BF41C49E77F11",
   "keywordClasses": [
     {
       "name": "mii.JsonParser",
@@ -85,7 +85,8 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": ""
         },
         {
           "name": "validateForCheckSubcription",
@@ -103,7 +104,8 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": ""
         },
         {
           "name": "validateForCheckUPCCBefore",
@@ -121,7 +123,8 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": ""
         },
         {
           "name": "validateForCheckUPCCAfter",
@@ -139,7 +142,8 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": ""
         },
         {
           "name": "validateForCheckAllowanceAfter",
@@ -157,10 +161,11 @@
                 "errorOnParsing": false
               }
             }
-          ]
+          ],
+          "javadoc": ""
         }
       ]
     }
   ],
-  "javadocParsed": false
+  "javadocParsed": true
 }

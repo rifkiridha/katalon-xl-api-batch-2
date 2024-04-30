@@ -38,13 +38,15 @@ def response = WS.sendRequest(request);
 
 def bodyResponse = response.getResponseBodyContent();
 
-Gson gson = new GsonBuilder().setPrettyPrinting().create();
+//Gson gson = new GsonBuilder().setPrettyPrinting().create();
+//
+//String prettyJsonString = gson.toJson(new JParser().parse(bodyResponse));
+//
+//println(prettyJsonString);
+//
+//WS.comment(prettyJsonString);
 
-String prettyJsonString = gson.toJson(new JParser().parse(bodyResponse));
-
-println(prettyJsonString);
-
-WS.comment(prettyJsonString);
+JsonParser.prettier(bodyResponse);
 
 VariableCollections.subscriberStatus = "A";
 VariableCollections.pricePlan = "513268";

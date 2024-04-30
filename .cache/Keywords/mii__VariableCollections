@@ -1,10 +1,10 @@
 {
-  "keywordFileContentHash": "B34456347D7FCAD83BA35F26F6F806C7",
+  "keywordFileContentHash": "C430D900D62AB286C26EAA32F1758080",
   "keywordClasses": [
     {
       "name": "mii.VariableCollections",
       "keywordMethods": []
     }
   ],
-  "javadocParsed": false
+  "javadocParsed": true
 }

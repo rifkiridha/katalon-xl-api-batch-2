@@ -23,12 +23,27 @@ import internal.GlobalVariable
 
 import groovy.json.JsonSlurper
 
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
+import com.google.gson.JsonParser as JParser
+import com.google.gson.JsonElement
+
 class JsonParser {
 
 	static parseJson(String jsonString) {
 		def jsonSlurper = new JsonSlurper()
 		def json = jsonSlurper.parseText(jsonString)
 		return json
+	}
+
+	static prettier(String jsonString) {
+		Gson gson = new GsonBuilder().setPrettyPrinting().create();
+		
+		String prettyJsonString = gson.toJson(new JParser().parse(jsonString));
+		
+		println(prettyJsonString);
+		
+		WS.comment(prettyJsonString);
 	}
 
 	static String findNameValue(String jsonData, String nameToFind) {
@@ -50,18 +65,18 @@ class JsonParser {
 		println("expected status : "+status);
 		println("expected code : "+code);
 		println("expected message : "+message);
-		
+
 		def jsonSlurper = new JsonSlurper();
 		def json = jsonSlurper.parseText(jsonData);
-		
+
 		def statusResponse = json.status;
 		def codeResponse = json.code;
 		def messageResponse = json.message;
-		
+
 		println("statusResponse : "+statusResponse);
 		println("codeResponse : "+codeResponse);
 		println("messageResponse : "+messageResponse);
-		
+
 
 		def subscriber = json.data.find { it.name == "SUBSCRIBER_STATUS" }
 		def plan = json.data.find { it.name == "PRICEPLAN" }
@@ -69,7 +84,7 @@ class JsonParser {
 		println("SUBSCRIBER STATUS data :"+subscriber)
 		println("SUBSCRIBER STATUS value result :"+subscriber.value)
 		println("SUBSCRIBER STATUS value expected :"+subscriberStatus)
-		
+
 		if(status == statusResponse && code == codeResponse && message == messageResponse) {
 			KeywordUtil.markPassed("Status, code, and message matches the expected value.")
 		}else {
